@@ -1,0 +1,42 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb,amsfonts,textcomp}
+\usepackage{color}
+\usepackage{array}
+\usepackage{supertabular}
+\usepackage{hhline}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{todonotes}
+\usepackage{authblk}
+\usepackage{pdflscape}
+\usepackage[backend=bibtex]{biblatex}
+\addbibresource{manuscript.bib}
+
+%opening
+\title{A rather complicated system}
+\author[1]{Gustavo Olivares\thanks{gustavo.olivares@niwa.co.nz}}
+\author[1]{Izak Deyzel\thanks{izak.deyzel@niwa.co.nz}}
+\author[1]{Guy Coulson\thanks{guy.coulson@niwa.co.nz}}
+\author[1]{Anyone else interested?}
+\affil[1]{National Institute of Water and Atmospheric research - NIWA}
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\input{abstract.tex}
+\end{abstract}
+\section*{Introduction}
+\input{introduction.tex}
+\section*{Methods}
+\input{methods.tex}
+\section*{Results}
+\input{results.tex}
+\section*{Conclusions}
+\input{conclusions.tex}
+% Generate the bibliography
+\printbibliography
+\end{document}

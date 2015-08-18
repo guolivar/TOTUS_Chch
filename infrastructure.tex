@@ -1,0 +1,47 @@
+\todo[inline]{The current thinking goes as follows
+
+
+	* This is the methods section.  
+	
+	* The methods describes the tools and what we did.  
+	
+	* First the system (including interface?).  
+	
+	* Then the data.  
+	
+	* Then what we did with the data.}  
+
+\subsection*{TOTUS system}
+
+\begin{figure}
+	\caption{TOTUS system overview}
+	\label{fig:system_diag}
+	\missingfigure{Replace SYSTEM.PNG diagram with TIKZ}
+\end{figure}
+
+The TOTUS system follows the client-server architecture in a 
+three-tier structure consisting of a data store, a data access layer and a presentation layer (Figure \ref{fig:system_diag}).
+
+\subsubsection*{Data store}
+The data store consists of a spatial database (PostgreSQL 9.2\cite{pgsql} 
+with PostGIS 2.0\cite{postgis}) where all the data layers are stored and the
+assessment modules are implemented. This database enables the system to be accessed using OGC standard compliant clients and supports the data access layer (FeatureServer\cite{dummy_temp} \todo{citation needed FeatureServer}) through the Web Feature Service (WFS) of the Open GIS
+Consortium (OGC) for querying the underlying data sets. The presentation layer. Figure \ref{fig:db_diag} shows a high level overview of the TOTUS database.
+
+\begin{figure}
+	\caption{TOTUS database overview}
+	\label{fig:db_diag}
+	\missingfigure{DATABASE diagram}
+\end{figure}
+
+
+A key component of the TOTUS system is the trip assignment module implemented using pgRouting\cite{dummy_temp} \todo{citation needed pgRouting}. This module enables some of the most powerful features in TOTUS like trip-dependent exposure and energy calculations as well and route optimisation based on arbitrary cost functions (e.g., minimum energy, minimum exposure, maximum \textit{enjoyment}, etc.). From a scenario evaluation point of view, the advantages of the database routing approach for TOTUS are that the spatial data and attributes can be modified and any data changes can be reflected instantaneously through the
+routing engine.
+
+\subsubsection*{TOTUS Modules}
+\input{modules.tex}
+\subsubsection*{Implementation Details}
+\input{implementation.tex}
+\subsection{Data access layer}
+data access layer (FeatureServer\cite{dummy_temp} \todo{citation needed FeatureServer})
+\subsection{Presentation layer}

@@ -1,0 +1,45 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb,amsfonts,textcomp}
+\usepackage{color}
+\usepackage{array}
+\usepackage{supertabular}
+\usepackage{hhline}
+\usepackage{hyperref}
+\usepackage{graphicx}
+
+
+%opening
+\title{The greatest title ever!}
+\author{
+  Izak Deyzel\\
+  \texttt{izak.deyzel@niwa.co.nz}
+  \and
+  Gustavo Olivares\\
+  \texttt{gustavo.olivares@niwa.co.nz}
+  }
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\input{abstract.tex}
+\end{abstract}
+
+\section[Intro]{Introduction: Towards Sustainable Urban Forms (TOTUS)}
+\input{introduction.tex}
+\section[Infrastructure]{TOTUS Infrastructure}
+\input{infrastructure.tex}
+\section[Data]{Data Sources}
+\input{datasources.tex}
+\section[Modules]{TOTUS Modules}
+\input{modules.tex}
+\section[Implement]{Implementation Details}
+\input{implementation.tex}
+\section[Conclusions]{Conclusions}
+\input{conclusions.tex}
+\bibliographystyle{amsplain}
+\bibliography{TOTUS.bib}
+\end{document}
