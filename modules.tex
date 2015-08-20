@@ -1,16 +1,14 @@
-\todo[inline]{brief introduction to the modules section}
-The modular approach followed in TOTUS delivers the necessary flexibility when dealing with different data sources and also enables the update and upgrade of individual components as the research advances. The details of the implementation of the database modules can be found in TOTUS code repository\cite{dummy_temp}\todo{code repo}
 
 \subsubsection*{Routing engine}
-A key component of the TOTUS system is its routing engine. Implemented based on pgRouting (vXX\todo{pgRouting version?})\cite{dummy_temp}\todo{citation needed pgRouting}, This module enables some of the most powerful features in TOTUS like trip-dependent exposure and energy calculations as well as route optimisation based on arbitrary cost functions (e.g., minimum energy, minimum exposure, maximum \textit{enjoyment}, etc.). From a scenario evaluation point of view, the advantages of the database routing approach for TOTUS are that the spatial data and attributes can be modified and any data changes can be reflected instantaneously through the routing engine. The implementation of this module takes a streamlined version of the Open Street Map \cite{dummy_temp}\todo{OSM ref} data schema and converts it into a directed graph using \textit{osmosis}\cite{dummy_temp} and \textit{osm2pgrouting}\cite{dummy_temp}. The routing information is kept on a separate data schema that can be linked to the physical road network by the unique OSM feature identifier.
+A key component of the TOTUS system is its routing engine. It enables some of the most powerful features in TOTUS like trip-dependent exposure and energy calculation as well as route optimisation based on arbitrary cost functions (e.g. minimum distance or energy). This module is implemented based on pgRouting (vXX\todo{pgRouting version?})\cite{dummy_temp}\todo{citation needed pgRouting}. The implementation of this module takes a streamlined version of the Open Street Map \cite{dummy_temp}\todo{OSM ref} data schema and converts it into a directed graph using \textit{osmosis}\cite{dummy_temp} and \textit{osm2pgrouting}\cite{dummy_temp}. The routing information is kept on a separate data schema that can be linked to the physical road network by the unique OSM feature identifier. From a scenario evaluation point of view, the advantages of the database routing approach for TOTUS are that the spatial data and attributes can be modified and any data changes can be reflected instantaneously through the routing engine. 
 
 \subsubsection*{Exposure}
-The current version of TOTUS' exposure module is based on a \textit{Traffic Impact Factor} developed by Longley et al\cite{dummy_temp}\todo{Citation needed TIF} to model NO$_2$ on a arbitrary grid. The method calculates, for a given point, an estimate of the impact of traffic from all the roads in the domain. This is applied to the centres of the cells that form the desired grid. The following diagram describes the calculations. For more details see Longley et al\cite{dummy_temp}\todo{Citation needed TIF}
+The current version of TOTUS' exposure module is based on a \textit{Traffic Impact Factor} developed by Longley et al\cite{dummy_temp}\todo{Citation needed TIF} to model $NO_2$ on a arbitrary grid covering a city. The method calculates, for a given point, an estimate of the impact of traffic from all the roads in the domain. This is applied to the centres of the grid cells. The following diagram describes the calculations. For more details see Longley et al\cite{dummy_temp}\todo{Citation needed TIF}
 
 \begin{equation}
 TIF_{x,y} = \sum_{road=1}^{R}{(Length_{road}*Traffic_{road})^{exp}}
 \end{equation}
-
+\todo[inline]{A DIAGRAM OF TIF}
 
 \subsubsection*{Energy}
 
