@@ -12,13 +12,16 @@
 	* Then what we did with the data.}  
 
 \subsection*{TOTUS system}
-The TOTUS system consists of a set of services built around a geospatial database following a client-server architecture. Figure \ref{fig:system_diag} shows a high level diagram of the sistem highlighting its main components:
+The TOTUS system consists of a set of services built around a geospatial database following a client-server architecture. Figure \ref{fig:system_diag} shows a high level diagram of the sistem highlighting its main components.
 \begin{itemize}
 	\item \textbf{Data store}: The database sitting at the core of the TOTUS system is implemented using PostgreSQL 9.2 \cite{pgsql} with PostGIS 2.0 \cite{postgis}. The data schemas are aimed at giving TOTUS the necessary flexibility to deal with different data sources. Figure \ref{fig:db_diag} shows the overall structure of the spatial database. The assessment modules implemented in the database are described in the following subsections. The database can be accessed directly or through the system's access layer.
 	\item \textbf{Access layer}: An instance of FeatureServer\cite{dummy_temp}\todo{citation needed FeatureServer} enables the system to be accessed using OGC standard compliant clients through the Web Feature Service (WFS) of the Open GIS
 	Consortium (OGC) for querying the underlying data sets.
 	\item \textbf{Presentation layer}: To facilitate the interaction with the system and provide potential users with a preview of its capabilities, a simple web interface was developed that showcases key functionalities of the system.
 \end{itemize}
+
+The code is released under the GPL(?) license and it is available in the project's GitHub page\todo{ref code repo}
+
 \begin{figure}
 	\caption{TOTUS system overview}
 	\label{fig:system_diag}
